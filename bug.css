@@ -1,0 +1,23 @@
+The following CSS code snippet demonstrates an uncommon bug related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.special div {
+  color: red;
+}
+
+#special div {
+  color: green;
+}
+
+#special .special div {
+  color: purple;
+}
+
+<div id="special" class="special"></div>
+```
+
+The expected output would be purple for the div element because `#special .special div` is most specific. But in some CSS implementations due to the order of selector evaluation it will return green instead of purple.
