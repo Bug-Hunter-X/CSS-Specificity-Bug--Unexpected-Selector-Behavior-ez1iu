@@ -1,0 +1,19 @@
+To resolve this, ensure selectors are unambiguous and consistent:
+
+```css
+/* Solution: More robust and unambiguous selectors */
+#special.special div {
+  color: purple;
+}
+div {
+  color: blue;
+}
+.special div {
+  color: red;
+}
+#special div {
+  color: green;
+}
+```
+
+By combining the ID and class selectors (`#special.special div`), you avoid ambiguity that could cause unpredictable behavior in different CSS engines.
